@@ -14,6 +14,7 @@ const app = express();
 
 connectDB();
 
+//Lista blanca de dominios permitidos
 const allowedOrigins = [
     'https://tu-proyecto-netlify.app',
     'https://otro-proyecto.netlify.app',

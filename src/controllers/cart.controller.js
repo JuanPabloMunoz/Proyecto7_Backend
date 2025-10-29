@@ -53,7 +53,7 @@ exports.editCart = async (req, res) => {
     )
 
     res.json({
-        message: 'Tu carrito fue actualizado',
+        message: 'Tu carrito has sido actualizado',
         updatedCart
     })
 }

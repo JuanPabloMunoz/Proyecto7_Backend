@@ -34,7 +34,7 @@ exports.login = async (req, res) => {
   const { email, password } = req.body;
   try {
     let foundUser = await User.findOne({ email });
-    if (!foundUser)
+    if (!foundUser) // Si no se encuentra el usuario
       return res.status(400).json({ message: "El usuario no existe" });
 
     const correctPassword = await bcryptjs.compare(
@@ -45,7 +45,7 @@ exports.login = async (req, res) => {
     if (!correctPassword)
       return res
         .status(400)
-        .json({ message: "El email o contrasena no corresponden" });
+        .json({ message: "El email o contrasena erroneo(s)" });
 
     const payload = {
       user: {
@@ -53,9 +53,9 @@ exports.login = async (req, res) => {
       },
     };
 
-    jwt.sign(
+    jwt.sign(//asigna un token
       payload,
-      process.env.SECRET,
+      process.env.SECRET,//trae la variable de entorno SECRET
       {
         expiresIn: "1d",
       },

@@ -17,7 +17,7 @@ exports.createCheckoutSession =  async (req, res) => {
         }
     })
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await stripe.checkout.sessions.create({//abrimos sesión en pasarela de pago stripe
         line_items,
         mode: 'payment',
         success_url: `${process.env.STRIPE_SUCCESS_URL}`,

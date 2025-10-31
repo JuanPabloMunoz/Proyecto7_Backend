@@ -64,11 +64,11 @@ exports.login = async (req, res) => {
 
         const isProd = process.env.NODE_ENV === 'production';
         res.
-            cookie('token', token, {
-              httpOnly: true,
-              secure: isProd,
-              sameSite: isProd ? 'None': 'Lax',
-              maxAge: 24 * 60 * 60 * 1000
+            cookie('token', token, {//retorno la cookie que contiene el token
+              httpOnly: true, //le decimos al navegador que no puede acceder a la cookie mediante javascript
+              secure: isProd, // en produccion solo se envia por https
+              sameSite: isProd ? 'None': 'Lax',//en este caso se puede enviar en solicitudes entre distintossitios
+              maxAge: 24 * 60 * 60 * 1000 //tiempo de vida de la cookie 1 dia
             })
             .json({ msg: 'Login exitoso' })
       }

@@ -17,7 +17,7 @@ connectDB();
 //Lista blanca de dominios permitidos
 const allowedOrigins = [
     'https://proyecto7-backend.onrender.com',
-    'https://p7front.netlify.app',
+    'https://proyefront.netlify.app',
     'http://localhost:5173'
 ];
 

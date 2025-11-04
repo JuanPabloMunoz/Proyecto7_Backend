@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 connectDB();
-
+/*
 //Lista blanca de dominios permitidos
 const allowedOrigins = [
      'https://proyecto7-backend.onrender.com',
@@ -34,7 +34,7 @@ app.use(cors({
     },
     credentials: true
 }));
-
+*/
 
 app.use(express.json());
 app.use(cookieParser());

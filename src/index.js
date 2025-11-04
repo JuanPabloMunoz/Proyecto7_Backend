@@ -13,10 +13,10 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 connectDB();
-/*
+
 //Lista blanca de dominios permitidos
 const allowedOrigins = [
-     'https://proyecto7-backend.onrender.com',
+    'https://proyecto7-backend.onrender.com',
     'https://p7-e-comerce.netlify.app/',
     'http://localhost:5173'
 ];
@@ -34,7 +34,7 @@ app.use(cors({
     },
     credentials: true
 }));
-*/
+
 
 app.use(express.json());
 app.use(cookieParser());

@@ -2,7 +2,7 @@ const Guitar = require('../models/Guitar');
 const stripe = require('stripe')(process.env.STRIPE_KEY);
 
 exports.getAllGuitars = async (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
+    
         try {
         const guitars = await Guitar.find({});
         return res.status(200).json({ guitars });

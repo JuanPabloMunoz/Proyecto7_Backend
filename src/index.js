@@ -19,9 +19,12 @@ const allowedOrigins = [
     'https://proyecto7-backend.onrender.com',
     'https://p7-e-comerce.netlify.app/',
     'http://localhost:5173'
+    
 ];
 
-//middlewares
+
+
+//middlewares 
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin) return callback(null, true);
@@ -34,6 +37,7 @@ app.use(cors({
     },
     credentials: true
 }));
+
 
 app.use(express.json());
 app.use(cookieParser());
